@@ -80,13 +80,31 @@ int main(int argc, char *argv[])
                 if (isupper(message[j]))
                 {
                     char c = message[j];
-                    cout << (char)((c - 65 - keyword[j % keyword.size()]) % 26 + 65);
+
+                    if ((c - 65 - keyword[j % keyword.size()]) > 0) //if expression is positive, simply reverse to decrypt
+                    {     
+                        cout << (char)((c - 65 - keyword[j % keyword.size()]) % 26 + 65); 
+                    }
+                    else //if expression is negative, need to do extra steps to decrypt since C++ calculates % strangely
+                    {
+                        cout << (char)((26 + (c - 65 - keyword[j % keyword.size()]) % 26) + 65);
+                    }
+
                 }
 
                 if (islower(message[j]))
                 {
                     char c = message[j];
-                    cout << (char)((c - 97 - keyword[j % keyword.size()]) % 26 + 97);
+
+                    if ((c - 97 - keyword[j % keyword.size()]) > 0)
+                    {
+ 
+                        cout << (char)((c - 97 - keyword[j % keyword.size()]) % 26 + 97);
+                    }
+                    else
+                    {
+                        cout << (char)((26 + (c - 97 - keyword[j % keyword.size()]) % 26) + 97);
+                    }
                 }
             }
  
