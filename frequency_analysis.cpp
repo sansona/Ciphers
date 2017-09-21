@@ -28,10 +28,12 @@ int main()
         }
     }
 
+
+
     for (int j = 0; j < 25; j++) //iterates through alphabet (len = 25) and prints out number of each letter
     {
-        cout << alphabet.at(to_string(char(65 + j))); //Need to figure out how to return key values
-        cout << "\n"; 
+        int iter = 65 + j;
+        cout << char(iter) << "\t" << alphabet.at(tolower(char(iter))) << "\n"; 
     }
 
 }
