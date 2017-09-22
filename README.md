@@ -18,8 +18,16 @@ Please enter the ciphertext:
   abcde
   cdefg
   ```
+2. Baconian cipher: takes individual letters and converts them into a predetermined code i.e 'a' -> "00001", 'b' -> "00010"...
   
-2. Vigenere cipher: shifts individual characters in encrypted message by letter in keyword. 
+  - Decryption difficulty: very easy
+  ```
+  ./baconian
+  abcde
+  0000000001000100001100100
+  ```
+ 
+3. Vigenere cipher: shifts individual characters in encrypted message by letter in keyword. 
   
   - Decryption difficulty: easy
   ```
