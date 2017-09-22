@@ -19,12 +19,13 @@ int main(int argc, char *argv[])
         int option;
         cout << "Choose an option for the Caesar cipher:\n 1) to encrypt \n 2) to decrypt\n";
         cin >> option;
+        cin.ignore();
     
     if (option == 1)
     {
 
         cout << "\nEnter the message in plaintext\n\n";
-        cin >> message;
+        getline(cin, message);
 
 
         for (int i = 0; i < message.length(); i++)
@@ -59,7 +60,7 @@ int main(int argc, char *argv[])
     if (option == 2)
     {
         cout << "\nEnter the message in ciphertext\n\n";
-        cin >> message;
+        getline(cin, message); 
 
 
         for (int i = 0; i < message.length(); i++)
