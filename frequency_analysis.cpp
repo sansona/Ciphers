@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <iostream>
 #include <map>
-#include <string>
+#include <string.h>
 using namespace std;
 
 //Character frequency analyzer for simple decryption
@@ -21,19 +21,22 @@ int main()
     for (int i = 0; i < input.length(); i++)
     {
         letter = tolower(input[i]);
-        if (alphabet.find(letter) != alphabet.end()) //iterates through char_list, if in then adds 1 to key
+        if (alphabet.find(letter) != alphabet.end()) //iterates through char_list, if in then adds 1 to values 
         {
            alphabet.at(letter) = alphabet.at(letter) + 1;
 
         }
     }
 
-
-
-    for (int j = 0; j < 25; j++) //iterates through alphabet (len = 25) and prints out number of each letter
+    cout << "Letter\tCount\tPercentage\n";
+    for (int j = 0; j < 26; j++) //iterates through alphabet (len = 25) and prints out number of each letter
     {
         int iter = 65 + j;
-        cout << char(iter) << "\t" << alphabet.at(tolower(char(iter))) << "\n"; 
+        cout << char(iter) << "\t" << alphabet.at(tolower(char(iter))) << "\t" 
+            << (alphabet.at(tolower(char(iter))) / (double)input.length())*100.0 << "%" << "\n"; //prints line of character, count, and percentage
     }
+
+    
+
 
 }
