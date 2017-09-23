@@ -32,7 +32,7 @@ int main(int argc, char *argv[])
  
         for (int i = 0; i < strlen(argv[1]); i++)
         {
-            keyword.push_back(toupper(argv[1][i]) - 65); // converts each char of argv[1] to alphanumeric value 
+            keyword.push_back(toupper(argv[1][i]) - 'A'); // converts each char of argv[1] to alphanumeric value 
         } 
 
         for (int j = 0; j < message.length(); j++)
@@ -42,13 +42,13 @@ int main(int argc, char *argv[])
                 if (isupper(message[j]))
                 {
                     char c = message[j];
-                    cout << (char)((c - 65 + keyword[j % keyword.size()]) % 26 + 65);
+                    cout << (char)((c - 'A' + keyword[j % keyword.size()]) % 26 + 'A');
                 }
 
             if (islower(message[j]))
             {
                 char c = message[j];
-                cout << (char)((c - 97 + keyword[j % keyword.size()]) % 26 + 97);
+                cout << (char)((c - 'a' + keyword[j % keyword.size()]) % 26 + 'a');
             }
             }          
 
@@ -71,7 +71,7 @@ int main(int argc, char *argv[])
 
         for (int i = 0; i < strlen(argv[1]); i++)
         {
-            keyword.push_back(toupper(argv[1][i]) - 65); // converts each char of argv[1] to alphanumeric value 
+            keyword.push_back(toupper(argv[1][i]) - 'A'); // converts each char of argv[1] to alphanumeric value 
         }
 
         for (int j = 0; j < message.length(); j++)
@@ -82,13 +82,13 @@ int main(int argc, char *argv[])
                 {
                     char c = message[j];
 
-                    if ((c - 65 - keyword[j % keyword.size()]) > 0) //if expression is positive, simply reverse to decrypt
+                    if ((c - 'A' - keyword[j % keyword.size()]) > 0) //if expression is positive, simply reverse to decrypt
                     {     
-                        cout << (char)((c - 65 - keyword[j % keyword.size()]) % 26 + 65); 
+                        cout << (char)((c - 'A' - keyword[j % keyword.size()]) % 26 + 'A'); 
                     }
                     else //if expression is negative, need to do extra steps to decrypt since C++ calculates % strangely
                     {
-                        cout << (char)((26 + (c - 65 - keyword[j % keyword.size()]) % 26) + 65);
+                        cout << (char)((26 + (c - 'A' - keyword[j % keyword.size()]) % 26) + 'A');
                     }
 
                 }
@@ -97,14 +97,14 @@ int main(int argc, char *argv[])
                 {
                     char c = message[j];
 
-                    if ((c - 97 - keyword[j % keyword.size()]) > 0)
+                    if ((c - 'a' - keyword[j % keyword.size()]) > 0)
                     {
  
-                        cout << (char)((c - 97 - keyword[j % keyword.size()]) % 26 + 97);
+                        cout << (char)((c - 'a' - keyword[j % keyword.size()]) % 26 + 'a');
                     }
                     else
                     {
-                        cout << (char)((26 + (c - 97 - keyword[j % keyword.size()]) % 26) + 97);
+                        cout << (char)((26 + (c - 'a' - keyword[j % keyword.size()]) % 26) + 'a');
                     }
                 }
             }

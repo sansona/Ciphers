@@ -36,13 +36,13 @@ int main(int argc, char *argv[])
                 if (isupper(message[i]))
                 {
                     char c = message[i];
-                    cout << (char)((c - 65 + key) % 26 + 65); 
+                    cout << (char)((c - 'A' + key) % 26 + 'A'); 
                 }
 
             if (islower(message[i]))
             {
                 char c = message[i];
-                cout << char((c - 97 + key) % 26 + 97);
+                cout << char((c - 'a' + key) % 26 + 'a');
             } 
             }
 
@@ -71,13 +71,13 @@ int main(int argc, char *argv[])
                 if (isupper(message[i]))
                 {
                     char c = message[i];
-                    cout << (char)((c - 65 - key) % 26 + 65); 
+                    cout << (char)((c - 'A' - key) % 26 + 'A'); 
                 }
 
                 if (islower(message[i]))
                 {
                     char c = message[i];
-                    cout << char((c - 97 - key) % 26 + 97);
+                    cout << char((c - 'a' - key) % 26 + 'a');
                 } 
             }
 
